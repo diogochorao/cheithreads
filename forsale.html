@@ -6,6 +6,7 @@
 	html { background: #ffffff; }
 	body { 
 		padding: 0px;
+		background: #8ec6eb;
 		background-image: url("media/background.jpg");
 		background-repeat: no-repeat;
 		background-attachment: fixed;
@@ -59,9 +60,9 @@
 		color: #a1565a;
 	}
 	.box a:active {
-    	top: 1px;
+        top: 1px;
 	}
-    .slideshow-page {
+	.slideshow-page {
 		width: 960px;
 		height: 300px;
         display: none;
@@ -134,12 +135,14 @@ img {vertical-align: middle;}
 </head>
 <body>
 	<div class="page">
+    
 		<div class="nav">
 			<p align="center">
 			<span style="font-family: Roboto Slab, Helvetica, Arial, sans-serif; font-size: 35px; font-weight: bold"><span style="color: #8ec6eb">chei</span><span style="color: #caa36c">threads</span></span>
 			<br><a href="about">about</a> &#8729; <span style="color: #a1565a">for sale</span> &#8729; <a href="https://www.instagram.com/cheithreads/" target="_blank">instagram</a>
 			</p>
 		</div>
+        
 		<div class="box">
 	        <div class="slideshow-page fade">
 			<div class="item1"></div><div class="item2"></div><div class="item3"></div>
@@ -156,8 +159,10 @@ img {vertical-align: middle;}
 			<a class="prev" onclick="plusSlides(-1)" align="center">&#8592;</a>
 			<a class="next" onclick="plusSlides(1)" align="center">&#8594;</a>
 		</div>
+        
 	</div>
 <script>
+/* SLIDESHOW JAVASCRIPT */
 var slideIndex = 1;
 showSlides(slideIndex);
 
