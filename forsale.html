@@ -145,7 +145,6 @@
 				<a href="media/background.jpg" data-lightbox="item1">
 					<div class="item1">
 						<img src="http://placedog.net/240/240" alt="A dog" style="margin: 30px">
-						<a href="media/cheila.jpg" data-lightbox="item1"><img src="http://placedog.net/240/240" alt="A dog" style="display: none"></a>
 				</div></a><a href="media/cheila.jpg" data-lightbox="item2">
 					<div class="item2">
 						<img src="http://placekitten.com/g/240/240" alt="A kitten" style="margin: 30px">
@@ -166,8 +165,13 @@
 			<a class="prev" onclick="plusSlides(-1)" align="center">&#8592;</a>
 			<a class="next" onclick="plusSlides(1)" align="center">&#8594;</a>
 		</div>
-        
+
 	</div>
+
+<p style="display: none"> /* IMAGES */
+	<a href="media/cheila.jpg" data-lightbox="item1"><img src="http://placedog.net/240/240" alt="A dog"></a>
+</p>
+
 <script> /* SLIDESHOW JAVASCRIPT */
 var slideIndex = 1;
 showSlides(slideIndex);
