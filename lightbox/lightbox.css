@@ -33,7 +33,7 @@ body.lb-disable-scrolling {
   border-radius: 3px;
 
   /* Image border */
-  border: 30px solid white;
+  border: 15px solid white;
 }
 
 .lightbox a img {
