@@ -24,12 +24,12 @@
 	}
 	.box {
 		height: 520px;
-		width: clamp(300px, 34%, 700px);
+		width: min(630px, 90%);
 		position: absolute;
 		top: 0%;
 		left: 0%;
-		margin-top: max(30px, calc((100vh - 490px) / 2));
-		margin-left: calc((100% - clamp(300px, 34%, 600px)) / 2);
+		margin-top: max(35px, calc((100vh - 490px) / 2));
+		margin-left: max(calc((100% - 630px) / 2), 5%);
 	}
 	.title {
 		height: 100px;
