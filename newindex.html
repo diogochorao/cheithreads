@@ -16,23 +16,72 @@
 		font-family: Roboto, Helvetica, Arial, sans-serif;
 		font-size: 16px;
 		color: #686f5d;
-	}
-	.title {
-		height: 100px;
-		width:300px;
-		background: #ffffff;
-		position: fixed;
-		top: 0%;
-		left: 50%;
-		margin-top: px;
-		margin-left: -150px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
+		overflow: scroll;
 	}
 	a {
 		color: #686f5d;
 		text-decoration: none;
+	}
+	.box {
+		height: 520px;
+		width: clamp(300px, 34%, 700px);
+		position: absolute;
+		top: 0%;
+		left: 0%;
+		margin-top: max(30px, calc((100vh - 490px) / 2));
+		margin-left: calc((100% - clamp(300px, 34%, 600px)) / 2);
+	}
+	.title {
+		height: 100px;
+		width: 100%;
+		background: #ffffff;
+		position: absolute;
+		top: 0%;
+		left: 0%;
+		margin-top: 0px;
+		margin-left: 0px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.etsy {
+		height: 100px;
+		width: 100%;
+		background: #ffffff;
+		position: absolute;
+		top: 0%;
+		left: 0%;
+		margin-top: 130px;
+		margin-left: 0px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.instagram {
+		height: 100px;
+		width: 100%;
+		background: #ffffff;
+		position: absolute;
+		top: 0%;
+		left: 0%;
+		margin-top: 260px;
+		margin-left: 0px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.contact {
+		height: 100px;
+		width: 100%;
+		background: #ffffff;
+		position: absolute;
+		top: 0%;
+		left: 0%;
+		margin-top: 390px;
+		margin-left: 0px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 </style>
 </head>
