@@ -19,6 +19,7 @@
 		font-size: 16px;
 		color: #686f5d;
 		overflow: hidden;
+		user-select: none;
 		animation-name: entrance-overflow;
 		animation-duration: 2.1s;
 		animation-iteration-count: 1;
@@ -47,6 +48,7 @@
 		width: 100%;
 		border: none;
 		color: #ffffff;
+		cursor: default;
 		font-family: Roboto Slab, Helvetica, Arial, sans-serif;
 		font-size: 43px;
 		text-align: center;
@@ -135,11 +137,12 @@
 		transition: 0s;
 		margin-top: calc(93px + 4 * min(5vw, 16px) + 1px);
 	}
-	.contact {
+	.contact-box {
 		height: 60px;
 		width: 100%;
 		border-radius: 6px;
 		background: #ffffff;
+		overflow: hidden;
 		position: absolute;
 		top: 0%;
 		left: 0%;
@@ -150,23 +153,88 @@
 		align-items: center;
 		transition: 0.5s;
 		visibility: hidden;
-		animation-name: contact-entrance;
+		animation-name: contact-box-entrance;
 		animation-delay: 1.1s;
 		animation-duration: 1s;
 		animation-iteration-count: 1;
 		animation-timing-function: ease;
 		animation-fill-mode: forwards;
 	}
-	@keyframes contact-entrance {
+	@keyframes contact-box-entrance {
 		0% {visibility: visible; margin-left: calc((max(calc((100% - 630px) / 2), 5vw) + min(630px, 90vw)) * 1.5)}
 		100% {visibility: visible;}
 	}
-	.contact:hover {
+	.contact-box:hover {
 		background: #d5e6b5;
 	}
-	.contact:active {
-		transition: 0s;
-		margin-top: calc(153px + 5 * min(5vw, 16px) + 1px);
+	.contact {
+		height: 60px;
+		width: 100%;
+		position: absolute;
+		top: 0%;
+		left: 0%;
+		margin-top: 0px;
+		margin-left: 0px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.ch-contact {
+		animation-name: ch-contact;
+		animation-duration: 0.5s;
+		animation-iteration-count: 1;
+		animation-timing-function: ease;
+		animation-fill-mode: forwards;
+	}
+	@keyframes ch-contact {
+		0% {margin-top: 0px;}
+		100% {margin-top: -60px;}
+	}
+	.cho-contact {
+		animation-name: cho-contact;
+		animation-duration: 0.5s;
+		animation-iteration-count: 1;
+		animation-timing-function: ease;
+		animation-fill-mode: forwards;
+	}
+	@keyframes cho-contact {
+		0% {margin-top: -60px;}
+		100% {margin-top: 0px;}
+	}
+	.email {
+		height: 60px;
+		width: 100%;
+		position: absolute;
+		top: 0%;
+		left: 0%;
+		margin-top: 60px;
+		margin-left: 0px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		user-select: text;
+	}
+	.ch-email {
+		animation-name: ch-email;
+		animation-duration: 0.5s;
+		animation-iteration-count: 1;
+		animation-timing-function: ease;
+		animation-fill-mode: forwards;
+	}
+	@keyframes ch-email {
+		0% {margin-top: 60px;}
+		100% {margin-top: 0px;}
+	}
+	.cho-email {
+		animation-name: cho-email;
+		animation-duration: 0.5s;
+		animation-iteration-count: 1;
+		animation-timing-function: ease;
+		animation-fill-mode: forwards;
+	}
+	@keyframes cho-email {
+		0% {margin-top: 0px;}
+		100% {margin-top: 60px;}
 	}
 </style>
 </head>
@@ -175,7 +243,24 @@
 		<div class="title"><p>cheithreads</p></div>
 		<a href="https://www.etsy.com/shop/cheithreads" target="_blank"><div class="etsy"><p>Visit my Etsy shop &#10024;</p></div></a>
 		<a href="https://www.instagram.com/cheithreads/" target="_blank"><div class="instagram"><p>Follow my Instagram &#128248;</p></div></a>
-		<div class="contact"><p>Contact me &#9993;&#65039;</p></div>
+		<div class="contact-box" onmouseenter="contacthover()" onmouseleave="contacthoveroff()"><div class="contact" id="contact"><p>Contact me &#9993;&#65039;</p></div><div class="email" id="email"><p>cheithreads@gmail.com</p></div></div>
 	</div>
+
+<script>
+function contacthover() {
+   var element = document.getElementById("contact");
+   element.classList.remove("cho-contact");
+   element.classList.add("ch-contact");
+   var element = document.getElementById("email");
+   element.classList.remove("cho-email");
+   element.classList.add("ch-email");
+}
+function contacthoveroff() {
+   var element = document.getElementById("contact");
+   element.classList.add("cho-contact");
+   var element = document.getElementById("email");
+   element.classList.add("cho-email");
+}
+</script>
 </body>
 </html>
