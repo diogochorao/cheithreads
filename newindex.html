@@ -209,6 +209,7 @@
 		left: 0%;
 		margin-top: 60px;
 		margin-left: 0px;
+		visibility: hidden;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -222,8 +223,8 @@
 		animation-fill-mode: forwards;
 	}
 	@keyframes ch-email {
-		0% {margin-top: 60px;}
-		100% {margin-top: 0px;}
+		0% {visibility: visible; margin-top: 60px;}
+		100% {visibility: visible; margin-top: 0px;}
 	}
 	.cho-email {
 		animation-name: cho-email;
@@ -233,8 +234,8 @@
 		animation-fill-mode: forwards;
 	}
 	@keyframes cho-email {
-		0% {margin-top: 0px;}
-		100% {margin-top: 60px;}
+		0% {visibility: visible; margin-top: 0px;}
+		100% {visibility: hidden; margin-top: 60px;}
 	}
 </style>
 </head>
