@@ -88,6 +88,7 @@
 		width: 100%;
 		border-radius: 6px;
 		background: #ffffff;
+		cursor: pointer;
 		position: absolute;
 		top: 0%;
 		left: 0%;
@@ -121,6 +122,7 @@
 		width: 100%;
 		border-radius: 6px;
 		background: #ffffff;
+		cursor: pointer;
 		position: absolute;
 		top: 0%;
 		left: 0%;
@@ -154,6 +156,7 @@
 		width: 100%;
 		border-radius: 6px;
 		background: #ffffff;
+		cursor: pointer;
 		overflow: hidden;
 		position: absolute;
 		top: 0%;
@@ -178,6 +181,10 @@
 	}
 	.contact-box:hover {
 		background: #d5e6ba;
+	}
+	.contact-box:active {
+		transition: 0s;
+		margin-top: calc(153px + 5 * min(5vw, 16px) + 1px);
 	}
 	.contact {
 		height: 60px;
@@ -213,7 +220,7 @@
 		0% {margin-top: -60px;}
 		100% {margin-top: 0px;}
 	}
-	.email {
+	.email-box {
 		height: 60px;
 		width: 100%;
 		position: absolute;
@@ -225,29 +232,89 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		user-select: text;
 	}
-	.ch-email {
-		animation-name: ch-email;
+	.ch-email-box {
+		animation-name: ch-email-box;
 		animation-duration: 0.5s;
 		animation-iteration-count: 1;
 		animation-timing-function: ease;
 		animation-fill-mode: forwards;
 	}
-	@keyframes ch-email {
+	@keyframes ch-email-box {
 		0% {visibility: visible; margin-top: 60px;}
 		100% {visibility: visible; margin-top: 0px;}
 	}
-	.cho-email {
-		animation-name: cho-email;
+	.cho-email-box {
+		animation-name: cho-email-box;
 		animation-duration: 0.5s;
 		animation-iteration-count: 1;
 		animation-timing-function: ease;
 		animation-fill-mode: forwards;
 	}
-	@keyframes cho-email {
+	@keyframes cho-email-box {
 		0% {visibility: visible; margin-top: 0px;}
 		100% {visibility: hidden; margin-top: 60px;}
+	}
+	.email {
+		height: 60px;
+		width: 100%;
+		position: absolute;
+		top: 0%;
+		left: 0%;
+		margin-top: 0px;
+		margin-left: 0px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+	}
+	.click-to-copy-email-address {
+		height: 60px;
+		width: 100%;
+		position: absolute;
+		top: 0%;
+		left: 0%;
+		margin-top: 0px;
+		margin-left: 0px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+	}
+	.ec-click-to-copy-email-address {
+		animation-name: ec-click-to-copy-email-address;
+		animation-duration: 0.5s;
+		animation-iteration-count: 1;
+		animation-timing-function: ease;
+		animation-fill-mode: forwards;
+	}
+	@keyframes ec-click-to-copy-email-address {
+		0% {margin-left: 0px;}
+		100% {margin-left: calc(min(630px, 90vw) * -1);}
+	}
+	.email-address-copied {
+		height: 60px;
+		width: 100%;
+		position: absolute;
+		top: 0%;
+		left: 0%;
+		margin-top: 0px;
+		margin-left: min(630px, 90vw);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+	}
+	.ec-email-address-copied {
+		animation-name: ec-email-address-copied;
+		animation-duration: 0.5s;
+		animation-iteration-count: 1;
+		animation-timing-function: ease;
+		animation-fill-mode: forwards;
+	}
+	@keyframes ec-email-address-copied {
+		0% {margin-left: min(630px, 90vw);}
+		100% {margin-left: 0px;}
 	}
 </style>
 </head>
@@ -256,23 +323,80 @@
 		<div class="title"><p>chei<span>threads</span></p></div>
 		<a href="https://www.etsy.com/shop/cheithreads" target="_blank"><div class="etsy"><p>Visit my Etsy shop &#10024;</p></div></a>
 		<a href="https://www.instagram.com/cheithreads/" target="_blank"><div class="instagram"><p>Follow my Instagram &#128248;</p></div></a>
-		<div class="contact-box" onmouseenter="contacthover()" onmouseleave="contacthoveroff()"><div class="contact" id="contact"><p>Contact me &#9993;&#65039;</p></div><div class="email" id="email"><p>cheithreads@gmail.com</p></div></div>
+		<div class="contact-box" onmouseenter="contacthover()" onmouseleave="contacthoveroff()">
+			<div class="contact" id="contact"><p>Contact me &#9993;&#65039;</p></div>
+			<div class="email-box" id="email-box" onclick="emailclick()">
+				<div class="click-to-copy-email-address" id="click-to-copy-email-address"><p><span style="visibility: hidden;">cheithreads@gmail.com</span><br><span style="font-family: Roboto Condensed, Helvetica, Arial, sans-serif; font-size: 14px; opacity: 0.7;">click to copy email address</span></p></div>
+				<div class="email-address-copied" id="email-address-copied"><p><span style="visibility: hidden;">cheithreads@gmail.com</span><br><span style="font-family: Roboto Condensed, Helvetica, Arial, sans-serif; font-size: 14px; opacity: 0.7;">email address copied!</span></p></div>
+				<div class="email"><p>cheithreads@gmail.com<br><span style="font-family: Roboto Condensed, Helvetica, Arial, sans-serif; font-size: 14px; opacity: 0.7; visibility: hidden;">click to copy email address</span></p></div>
+			</div>
+		</div>
 	</div>
 
 <script>
 function contacthover() {
+   var element = document.getElementById("click-to-copy-email-address");
+   element.classList.remove("ec-click-to-copy-email-address");
+   var element = document.getElementById("email-address-copied");
+   element.classList.remove("ec-email-address-copied");
    var element = document.getElementById("contact");
    element.classList.remove("cho-contact");
    element.classList.add("ch-contact");
-   var element = document.getElementById("email");
-   element.classList.remove("cho-email");
-   element.classList.add("ch-email");
+   var element = document.getElementById("email-box");
+   element.classList.remove("cho-email-box");
+   element.classList.add("ch-email-box");
 }
 function contacthoveroff() {
    var element = document.getElementById("contact");
    element.classList.add("cho-contact");
-   var element = document.getElementById("email");
-   element.classList.add("cho-email");
+   var element = document.getElementById("email-box");
+   element.classList.add("cho-email-box");
+}
+function fallbackCopyTextToClipboard(text) {
+  var textArea = document.createElement("textarea");
+  textArea.value = text;
+  
+  // Avoid scrolling to bottom
+  textArea.style.top = "0";
+  textArea.style.left = "0";
+  textArea.style.position = "fixed";
+
+  document.body.appendChild(textArea);
+  textArea.focus();
+  textArea.select();
+
+  try {
+    var successful = document.execCommand('copy');
+    var msg = successful ? 'successful' : 'unsuccessful';
+    console.log('Fallback: Copying text command was ' + msg);
+  } catch (err) {
+    console.error('Fallback: Oops, unable to copy', err);
+  }
+
+  document.body.removeChild(textArea);
+}
+function copyTextToClipboard(text) {
+  if (!navigator.clipboard) {
+    fallbackCopyTextToClipboard(text);
+    return;
+  }
+  navigator.clipboard.writeText(text).then(function() {
+    console.log('Async: Copying to clipboard was successful!');
+  }, function(err) {
+    console.error('Async: Could not copy text: ', err);
+  });
+}
+
+var copyEmail = document.querySelector('.email-box');
+
+copyEmail.addEventListener('click', function(event) {
+  copyTextToClipboard('cheithreads@gmail.com');
+});
+function emailclick() {
+   var element = document.getElementById("click-to-copy-email-address");
+   element.classList.add("ec-click-to-copy-email-address");
+   var element = document.getElementById("email-address-copied");
+   element.classList.add("ec-email-address-copied");
 }
 </script>
 </body>
