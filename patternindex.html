@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<!--
+                            .         .  .                 .     
+                        ,-. |-. ,-. . |- |-. ,-. ,-. ,-. ,-| ,-. 
+                        |   | | |-' | |  | | |   |-' ,-| | | `-. 
+                        `-' ' ' `-' ' `' ' ' '   `-' `-^ `-^ `-'
+                    Welcome to the Cheithreads website source code!
+               If you're reading this, go to my latest Instagram post and
+                 comment "Caroline stole my broccoli casserole recipe".
+-->
+<html>
+<head>
+	<title>cheithreads</title>
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<meta name="description" content="Cheithreads is Cheila Sousa, an embroidery artist from Lisbon, Portugal. Custom commissions are available!">
+	<meta name="keywords" content="cheithreads, hand, embroidery, bordados, Lisbon, Lisboa, Portugal">
+	<meta name="robots" content="noarchive, max-snippet:106">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#4a4f40">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab|Roboto+Condensed&display=swap">
+<style>
+	html {
+		background: #626955;
+	}
+	body {
+		padding: 0;
+		margin: 0;
+		font-family: Roboto, Helvetica, Arial, sans-serif;
+		font-size: 16px;
+		color: #626955;
+		overflow: hidden;
+		user-select: none;
+		animation-name: entrance-overflow;
+		animation-duration: 2.3s;
+		animation-iteration-count: 1;
+		animation-fill-mode: forwards;
+	}
+	@keyframes entrance-overflow {
+		0% {overflow: hidden;}
+		99.99% {overflow: hidden;}
+		100% {overflow: auto;}
+	}
+	a {
+		color: #686f5d;
+		text-decoration: none;
+	}
+	.box {
+		height: min(calc(273px + 35vw), 385px);
+		width: min(630px, 90vw);
+		position: absolute;
+		top: 0%;
+		left: 0%;
+		margin-top: max(0px, calc((100vh - min(calc(240px + 15vw), 288px)) / 2 - 33px - 4 * min(5vw, 16px)));
+		margin-left: max(calc((100% - 630px) / 2), 5%);
+	}
+	.title {
+		height: 33px;
+		width: 100%;
+		border: none;
+		color: #ffffff;
+		cursor: default;
+		font-family: Roboto Slab, Helvetica, Arial, sans-serif;
+		font-size: 43px;
+		text-align: center;
+		position: absolute;
+		top: 0%;
+		left: 0%;
+		margin-top: min(5vw, 16px);
+		margin-left: 0px;
+		animation-name: title-entrance;
+		animation-duration: 1.5s;
+		animation-iteration-count: 1;
+		animation-timing-function: ease-in-out;
+		animation-fill-mode: forwards;
+	}
+	@keyframes title-entrance {
+		0% {top: 50%; margin-top: -16.5px;}
+		50% {top: 50%; margin-top: -16.5px;}
+		100% {top: 0%; margin-top: min(5vw, 16px);}
+	}
+	.title p {
+		margin-top: -12px;
+	}
+	.title span {
+		animation-name: threads-entrance;
+		animation-duration: 1.5s;
+		animation-iteration-count: 1;
+		animation-timing-function: ease-in-out;
+		animation-fill-mode: forwards;
+	}
+	@keyframes threads-entrance {
+		0% {color: #d5e6ba;}
+		50% {color: #d5e6ba;}
+		100% {color: #ffffff;}
+	}
+	.pattern {
+		height: 60px;
+		width: 100%;
+		border-radius: 6px;
+		background: #ffffff;
+		cursor: pointer;
+		position: absolute;
+		top: 0%;
+		left: 0%;
+		margin-top: calc(33px + 3 * min(5vw, 16px));
+		margin-left: 0px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		transition: 0.5s;
+		visibility: hidden;
+		animation-name: pattern-entrance;
+		animation-delay: 1.1s;
+		animation-duration: 1s;
+		animation-iteration-count: 1;
+		animation-timing-function: ease;
+		animation-fill-mode: forwards;
+	}
+	@keyframes pattern-entrance {
+		0% {visibility: visible; margin-left: calc((max(calc((100% - 630px) / 2), 5vw) + min(630px, 90vw)) * 1.5)}
+		100% {visibility: visible;}
+	}
+	.pattern:hover {
+		background: #d5e6ba;
+	}
+	.pattern:active {
+		transition: 0s;
+		margin-top: calc(33px + 3 * min(5vw, 16px) + 1px);
+	}
+	.etsy {
+		height: 60px;
+		width: 100%;
+		border-radius: 6px;
+		background: #ffffff;
+		cursor: pointer;
+		position: absolute;
+		top: 0%;
+		left: 0%;
+		margin-top: calc(93px + 4 * min(5vw, 16px));
+		margin-left: 0px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		transition: 0.5s;
+		visibility: hidden;
+		animation-name: etsy-entrance;
+		animation-delay: 1.2s;
+		animation-duration: 1s;
+		animation-iteration-count: 1;
+		animation-timing-function: ease;
+		animation-fill-mode: forwards;
+	}
+	@keyframes etsy-entrance {
+		0% {visibility: visible; margin-left: calc((max(calc((100% - 630px) / 2), 5vw) + min(630px, 90vw)) * 1.5)}
+		100% {visibility: visible;}
+	}
+	.etsy:hover {
+		background: #d5e6ba;
+	}
+	.etsy:active {
+		transition: 0s;
+		margin-top: calc(93px + 4 * min(5vw, 16px) + 1px);
+	}
+	.instagram {
+		height: 60px;
+		width: 100%;
+		border-radius: 6px;
+		background: #ffffff;
+		cursor: pointer;
+		overflow: hidden;
+		position: absolute;
+		top: 0%;
+		left: 0%;
+		margin-top: calc(153px + 5 * min(5vw, 16px));
+		margin-left: 0px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		transition: 0.5s;
+		visibility: hidden;
+		animation-name: instagram-entrance;
+		animation-delay: 1.3s;
+		animation-duration: 1s;
+		animation-iteration-count: 1;
+		animation-timing-function: ease;
+		animation-fill-mode: forwards;
+	}
+	@keyframes instagram-entrance {
+		0% {visibility: visible; margin-left: calc((max(calc((100% - 630px) / 2), 5vw) + min(630px, 90vw)) * 1.5)}
+		100% {visibility: visible;}
+	}
+	.instagram:hover {
+		background: #d5e6ba;
+	}
+	.instagram:active {
+		transition: 0s;
+		margin-top: calc(153px + 5 * min(5vw, 16px) + 1px);
+	}
+	.contact-box {
+		height: 60px;
+		width: 100%;
+		border-radius: 6px;
+		background: #ffffff;
+		cursor: pointer;
+		overflow: hidden;
+		position: absolute;
+		top: 0%;
+		left: 0%;
+		margin-top: calc(213px + 6 * min(5vw, 16px));
+		margin-left: 0px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		transition: 0.5s;
+		visibility: hidden;
+		animation-name: contact-box-entrance;
+		animation-delay: 1.4s;
+		animation-duration: 1s;
+		animation-iteration-count: 1;
+		animation-timing-function: ease;
+		animation-fill-mode: forwards;
+	}
+	@keyframes contact-box-entrance {
+		0% {visibility: visible; margin-left: calc((max(calc((100% - 630px) / 2), 5vw) + min(630px, 90vw)) * 1.5)}
+		100% {visibility: visible;}
+	}
+	.contact-box:hover {
+		background: #d5e6ba;
+	}
+	.contact-box:active {
+		transition: 0s;
+		margin-top: calc(213px + 6 * min(5vw, 16px) + 1px);
+	}
+	.contact {
+		height: 60px;
+		width: 100%;
+		position: absolute;
+		top: 0%;
+		left: 0%;
+		margin-top: 0px;
+		margin-left: 0px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.ch-contact {
+		animation-name: ch-contact;
+		animation-duration: 0.5s;
+		animation-iteration-count: 1;
+		animation-timing-function: ease;
+		animation-fill-mode: forwards;
+	}
+	@keyframes ch-contact {
+		0% {margin-top: 0px;}
+		100% {margin-top: -60px;}
+	}
+	.cho-contact {
+		animation-name: cho-contact;
+		animation-duration: 0.5s;
+		animation-iteration-count: 1;
+		animation-timing-function: ease;
+		animation-fill-mode: forwards;
+	}
+	@keyframes cho-contact {
+		0% {margin-top: -60px;}
+		100% {margin-top: 0px;}
+	}
+	.email-box {
+		height: 60px;
+		width: 100%;
+		position: absolute;
+		top: 0%;
+		left: 0%;
+		margin-top: 60px;
+		margin-left: 0px;
+		visibility: hidden;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.ch-email-box {
+		animation-name: ch-email-box;
+		animation-duration: 0.5s;
+		animation-iteration-count: 1;
+		animation-timing-function: ease;
+		animation-fill-mode: forwards;
+	}
+	@keyframes ch-email-box {
+		0% {visibility: visible; margin-top: 60px;}
+		100% {visibility: visible; margin-top: 0px;}
+	}
+	.cho-email-box {
+		animation-name: cho-email-box;
+		animation-duration: 0.5s;
+		animation-iteration-count: 1;
+		animation-timing-function: ease;
+		animation-fill-mode: forwards;
+	}
+	@keyframes cho-email-box {
+		0% {visibility: visible; margin-top: 0px;}
+		100% {visibility: hidden; margin-top: 60px;}
+	}
+	.email {
+		height: 60px;
+		width: 100%;
+		position: absolute;
+		top: 0%;
+		left: 0%;
+		margin-top: 0px;
+		margin-left: 0px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+	}
+	.click-to-copy-email-address {
+		height: 60px;
+		width: 100%;
+		position: absolute;
+		top: 0%;
+		left: 0%;
+		margin-top: 0px;
+		margin-left: 0px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+	}
+	.ec-click-to-copy-email-address {
+		animation-name: ec-click-to-copy-email-address;
+		animation-duration: 0.5s;
+		animation-iteration-count: 1;
+		animation-timing-function: ease;
+		animation-fill-mode: forwards;
+	}
+	@keyframes ec-click-to-copy-email-address {
+		0% {margin-left: 0px;}
+		100% {margin-left: calc(min(630px, 90vw) * -1);}
+	}
+	.email-address-copied {
+		height: 60px;
+		width: 100%;
+		position: absolute;
+		top: 0%;
+		left: 0%;
+		margin-top: 0px;
+		margin-left: min(630px, 90vw);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+	}
+	.ec-email-address-copied {
+		animation-name: ec-email-address-copied;
+		animation-duration: 0.5s;
+		animation-iteration-count: 1;
+		animation-timing-function: ease;
+		animation-fill-mode: forwards;
+	}
+	@keyframes ec-email-address-copied {
+		0% {margin-left: min(630px, 90vw);}
+		100% {margin-left: 0px;}
+	}
+</style>
+</head>
+<body>
+	<p style="visibility: hidden;">Cheithreads is Cheila Sousa, an embroidery artist from Lisbon, Portugal. Custom commissions are available!</p>
+	<div class="box">
+		<div class="title"><p>chei<span>threads</span></p></div>
+		<a href="https://www.etsy.com/shop/cheithreads" target="_blank"><div class="pattern"><p>BUY MY PATTERN "Views of Violet"</p></div></a>
+		<a href="https://www.etsy.com/shop/cheithreads" target="_blank"><div class="etsy"><p>Visit my Etsy shop &#10024;</p></div></a>
+		<a href="https://www.instagram.com/cheithreads/" target="_blank"><div class="instagram"><p>Follow my Instagram &#128248;</p></div></a>
+		<div class="contact-box" onmouseenter="contacthover()" onmouseleave="contacthoveroff()">
+			<div class="contact" id="contact"><p>Contact me &#9993;&#65039;</p></div>
+			<div class="email-box" id="email-box" onclick="emailclick()">
+				<div class="click-to-copy-email-address" id="click-to-copy-email-address"><p><span style="visibility: hidden;">cheithreads@gmail.com</span><br><span style="font-family: Roboto Condensed, Helvetica, Arial, sans-serif; font-size: 14px; opacity: 0.7;">click to copy email address</span></p></div>
+				<div class="email-address-copied" id="email-address-copied"><p><span style="visibility: hidden;">cheithreads@gmail.com</span><br><span style="font-family: Roboto Condensed, Helvetica, Arial, sans-serif; font-size: 14px; opacity: 0.7;">email address copied!</span></p></div>
+				<div class="email"><p>cheithreads@gmail.com<br><span style="font-family: Roboto Condensed, Helvetica, Arial, sans-serif; font-size: 14px; opacity: 0.7; visibility: hidden;">click to copy email address</span></p></div>
+			</div>
+		</div>
+	</div>
+
+<script>
+function contacthover() {
+   var element = document.getElementById("click-to-copy-email-address");
+   element.classList.remove("ec-click-to-copy-email-address");
+   var element = document.getElementById("email-address-copied");
+   element.classList.remove("ec-email-address-copied");
+   var element = document.getElementById("contact");
+   element.classList.remove("cho-contact");
+   element.classList.add("ch-contact");
+   var element = document.getElementById("email-box");
+   element.classList.remove("cho-email-box");
+   element.classList.add("ch-email-box");
+}
+function contacthoveroff() {
+   var element = document.getElementById("contact");
+   element.classList.add("cho-contact");
+   var element = document.getElementById("email-box");
+   element.classList.add("cho-email-box");
+}
+function fallbackCopyTextToClipboard(text) {
+  var textArea = document.createElement("textarea");
+  textArea.value = text;
+  
+  // Avoid scrolling to bottom
+  textArea.style.top = "0";
+  textArea.style.left = "0";
+  textArea.style.position = "fixed";
+
+  document.body.appendChild(textArea);
+  textArea.focus();
+  textArea.select();
+
+  try {
+    var successful = document.execCommand('copy');
+    var msg = successful ? 'successful' : 'unsuccessful';
+    console.log('Fallback: Copying text command was ' + msg);
+  } catch (err) {
+    console.error('Fallback: Oops, unable to copy', err);
+  }
+
+  document.body.removeChild(textArea);
+}
+function copyTextToClipboard(text) {
+  if (!navigator.clipboard) {
+    fallbackCopyTextToClipboard(text);
+    return;
+  }
+  navigator.clipboard.writeText(text).then(function() {
+    console.log('Async: Copying to clipboard was successful!');
+  }, function(err) {
+    console.error('Async: Could not copy text: ', err);
+  });
+}
+
+var copyEmail = document.querySelector('.email-box');
+
+copyEmail.addEventListener('click', function(event) {
+  copyTextToClipboard('cheithreads@gmail.com');
+});
+function emailclick() {
+   var element = document.getElementById("click-to-copy-email-address");
+   element.classList.add("ec-click-to-copy-email-address");
+   var element = document.getElementById("email-address-copied");
+   element.classList.add("ec-email-address-copied");
+}
+</script>
+</body>
+</html>
