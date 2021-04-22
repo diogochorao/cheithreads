@@ -49,12 +49,12 @@
 		text-decoration: none;
 	}
 	.box {
-		height: min(calc(273px + 35vw), 385px);
+		height: min(calc(333px + 40vw), 461px);
 		width: min(630px, 90vw);
 		position: absolute;
 		top: 0%;
 		left: 0%;
-		margin-top: max(0px, calc((100vh - min(calc(240px + 15vw), 288px)) / 2 - 33px - 4 * min(5vw, 16px)));
+		margin-top: max(0px, calc((100vh - min(calc(300px + 20vw), 364px)) / 2 - 33px - 3 * min(5vw, 16px)));
 		margin-left: max(calc((100% - 630px) / 2), 5%);
 	}
 	.title {
@@ -97,7 +97,7 @@
 		50% {color: #d5e6ba;}
 		100% {color: #ffffff;}
 	}
-	.pattern {
+	.pattern-1 {
 		height: 60px;
 		width: 100%;
 		border-radius: 6px;
@@ -114,25 +114,25 @@
 		text-align: center;
 		transition: 0.5s;
 		visibility: hidden;
-		animation-name: pattern-entrance;
+		animation-name: pattern-1-entrance;
 		animation-delay: 1.1s;
 		animation-duration: 1s;
 		animation-iteration-count: 1;
 		animation-timing-function: ease;
 		animation-fill-mode: forwards;
 	}
-	@keyframes pattern-entrance {
+	@keyframes pattern-1-entrance {
 		0% {visibility: visible; margin-left: calc((max(calc((100% - 630px) / 2), 5vw) + min(630px, 90vw)) * 1.5)}
 		100% {visibility: visible;}
 	}
-	.pattern:hover {
+	.pattern-1:hover {
 		background: #d5e6ba;
 	}
-	.pattern:active {
+	.pattern-1:active {
 		transition: 0s;
 		margin-top: calc(33px + 3 * min(5vw, 16px) + 1px);
 	}
-	.etsy {
+	.pattern-2 {
 		height: 60px;
 		width: 100%;
 		border-radius: 6px;
@@ -149,25 +149,25 @@
 		text-align: center;
 		transition: 0.5s;
 		visibility: hidden;
-		animation-name: etsy-entrance;
+		animation-name: pattern-2-entrance;
 		animation-delay: 1.2s;
 		animation-duration: 1s;
 		animation-iteration-count: 1;
 		animation-timing-function: ease;
 		animation-fill-mode: forwards;
 	}
-	@keyframes etsy-entrance {
+	@keyframes pattern-2-entrance {
 		0% {visibility: visible; margin-left: calc((max(calc((100% - 630px) / 2), 5vw) + min(630px, 90vw)) * 1.5)}
 		100% {visibility: visible;}
 	}
-	.etsy:hover {
+	.pattern-2:hover {
 		background: #d5e6ba;
 	}
-	.etsy:active {
+	.pattern-2:active {
 		transition: 0s;
 		margin-top: calc(93px + 4 * min(5vw, 16px) + 1px);
 	}
-	.instagram {
+	.etsy {
 		height: 60px;
 		width: 100%;
 		border-radius: 6px;
@@ -185,25 +185,25 @@
 		text-align: center;
 		transition: 0.5s;
 		visibility: hidden;
-		animation-name: instagram-entrance;
+		animation-name: etsy-entrance;
 		animation-delay: 1.3s;
 		animation-duration: 1s;
 		animation-iteration-count: 1;
 		animation-timing-function: ease;
 		animation-fill-mode: forwards;
 	}
-	@keyframes instagram-entrance {
+	@keyframes etsy-entrance {
 		0% {visibility: visible; margin-left: calc((max(calc((100% - 630px) / 2), 5vw) + min(630px, 90vw)) * 1.5)}
 		100% {visibility: visible;}
 	}
-	.instagram:hover {
+	.etsy:hover {
 		background: #d5e6ba;
 	}
-	.instagram:active {
+	.etsy:active {
 		transition: 0s;
 		margin-top: calc(153px + 5 * min(5vw, 16px) + 1px);
 	}
-	.contact-box {
+	.instagram {
 		height: 60px;
 		width: 100%;
 		border-radius: 6px;
@@ -221,8 +221,44 @@
 		text-align: center;
 		transition: 0.5s;
 		visibility: hidden;
-		animation-name: contact-box-entrance;
+		animation-name: instagram-entrance;
 		animation-delay: 1.4s;
+		animation-duration: 1s;
+		animation-iteration-count: 1;
+		animation-timing-function: ease;
+		animation-fill-mode: forwards;
+	}
+	@keyframes instagram-entrance {
+		0% {visibility: visible; margin-left: calc((max(calc((100% - 630px) / 2), 5vw) + min(630px, 90vw)) * 1.5)}
+		100% {visibility: visible;}
+	}
+	.instagram:hover {
+		background: #d5e6ba;
+	}
+	.instagram:active {
+		transition: 0s;
+		margin-top: calc(213px + 6 * min(5vw, 16px) + 1px);
+	}
+	.contact-box {
+		height: 60px;
+		width: 100%;
+		border-radius: 6px;
+		background: #ffffff;
+		cursor: pointer;
+		overflow: hidden;
+		position: absolute;
+		top: 0%;
+		left: 0%;
+		margin-top: calc(273px + 7 * min(5vw, 16px));
+		margin-left: 0px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		transition: 0.5s;
+		visibility: hidden;
+		animation-name: contact-box-entrance;
+		animation-delay: 1.5s;
 		animation-duration: 1s;
 		animation-iteration-count: 1;
 		animation-timing-function: ease;
@@ -237,7 +273,7 @@
 	}
 	.contact-box:active {
 		transition: 0s;
-		margin-top: calc(213px + 6 * min(5vw, 16px) + 1px);
+		margin-top: calc(273px + 7 * min(5vw, 16px) + 1px);
 	}
 	.contact {
 		height: 60px;
@@ -375,7 +411,8 @@
 	<p style="visibility: hidden;">Cheithreads is Cheila Sousa, an embroidery artist from Lisbon, Portugal. Custom commissions are available!</p>
 	<div class="box">
 		<div class="title"><p>chei<span>threads</span></p></div>
-		<a href="https://www.etsy.com/listing/987684367/pdf-landscape-embroidery-pattern" target="_blank"><div class="pattern"><p><span style="font-size: 15px; font-weight: 900;">BUY MY LANDSCAPE EMBROIDERY PATTERN</span><br><span style="font-size: 14px;">with video and photographic tutorials! &#128149;</span></p></div></a>
+		<a href="https://www.etsy.com/listing/1006100793/floral-embroidery-pattern-for-beginners" target="_blank"><div class="pattern-1"><p><span style="font-size: 15px; font-weight: 900;">BUY MY "BLOOMING FLOWERS" EMBROIDERY PATTERN</span><br><span style="font-size: 14px;">with video and photographic tutorials! &#128149;</span></p></div></a>
+		<a href="https://www.etsy.com/listing/987684367/pdf-landscape-embroidery-pattern" target="_blank"><div class="pattern-2"><p><span style="font-size: 15px; font-weight: 900;">BUY MY LANDSCAPE EMBROIDERY PATTERN</span><br><span style="font-size: 14px;">with video and photographic tutorials! &#128149;</span></p></div></a>
 		<a href="https://www.etsy.com/shop/cheithreads" target="_blank"><div class="etsy"><p>Visit my Etsy shop &#10024;</p></div></a>
 		<a href="https://www.instagram.com/cheithreads/" target="_blank"><div class="instagram"><p>Follow my Instagram &#128248;</p></div></a>
 		<div class="contact-box" onmouseenter="contacthover()" onmouseleave="contacthoveroff()">
